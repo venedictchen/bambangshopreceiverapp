@@ -85,5 +85,8 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. Pada kasus ini, kita menggunakan Read Write Lock dibandingkan mutex adalah mutex hanya mengizinkan 1 thread yang menggunakan variabel saat satu waktu. Dikarenakan kasus kita notification yang akan dibaca oleh banyak thread tanpa ada write, maka kita tidak dapat menggunakan mutex.
+
+2. Rust tidak mengizinkan karena variabel static di Rust immutable agar thread safety saat multithreading berbeda dengan java yang bisa berubah-ubah datanya. `lazy_static` membuat suatu variabel menjadi Singleton, yaitu variabel tersebut hanya ada 1 dalam program tersebut.
 
 #### Reflection Subscriber-2
